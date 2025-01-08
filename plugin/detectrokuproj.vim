@@ -36,3 +36,11 @@ fun! s:RokuFileSetup()
     nnoremap <buffer> <leader>; :RokuInstall<cr>
     nnoremap <buffer> <leader>' :RokuPackage<cr>
 endfun
+
+" Add BrighterScript filetype detection
+augroup filetypedetect
+  au! BufRead,BufNewFile *.bs setf brighterscript
+augroup END
+
+" Load BrighterScript syntax
+runtime! syntax/brighterscript.vim
